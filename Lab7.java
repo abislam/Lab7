@@ -44,7 +44,7 @@ import java.util.Scanner;
 	 					rt1[count++] = new RightTriangle(height, base, rtID, rtX, rtY);
 	 					rtID +=1;
 	 				}else{
-	 					System.out.println("The program has reached the max number of right triangles allowed.")
+	 					System.out.println("\nThe program has reached the max number of right triangles allowed.\n");
 	 				}
 	 				break;
 
@@ -56,11 +56,12 @@ import java.util.Scanner;
  							rt1[j] = rt1[count-1];
  							rt1[count-1] = null;
  							count--;
+ 							System.out.println("\nRight Triangle with ID " + rtIndex + " has been deleted\n");
  							programDebug = false;
  						}
  					}
  					if(programDebug){
- 						System.out.println("Invalid Right Triangle ID")	
+ 						System.out.println("\nInvalid Right Triangle ID\n")	;
  					}
  					break;
 
@@ -69,7 +70,7 @@ import java.util.Scanner;
  						rt1[j] = null;
  					}
  					count = 0;
- 					System.out.println("All right triangles have been deleted.");
+ 					System.out.println("\nAll right triangles have been deleted.\n");
  					break;
 
  			}//end of switch
