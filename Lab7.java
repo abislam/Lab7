@@ -3,6 +3,35 @@ import java.util.Scanner;
  public class Lab7{
  	public static void main(String[] args){
 
+ 		Scanner scan = new Scanner(System.in);
+ 		double height, base;
+ 		int count = 0;
+ 		int rtID = 0;
+ 		int userChoice, rtIndex, rtX, rtY;
+
+ 		RightTriangle rt1[] = new RightTriangle[10];
+
+ 		boolean programRunner = true;
+ 		boolean programDebug;
+
+ 		while(programRunner){
+ 			System.out.println("1 - Enter a new right triangle \n");
+ 			System.out.println("2 - Delete a right triangle \n");
+ 			System.out.println("3 - Delete all right triangles \n");
+ 			System.out.println("4 - Display all right triangle \n");
+ 			System.out.println("5 - Move a triangle \n");
+ 			System.out.println("6 - Resize a triangle \n");
+ 			System.out.println("7 - Enter a scale factor \n");
+ 			System.out.println("8 - Scale all triangles \n");
+ 			System.out.println("9 - Exit program \n\n");
+ 			System.out.println("Please choose an option: ");
+
+ 			
+
+
+
+ 			
+ 		}
 
  	}
  }
