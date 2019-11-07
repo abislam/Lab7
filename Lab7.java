@@ -73,6 +73,18 @@ import java.util.Scanner;
  					System.out.println("\nAll right triangles have been deleted.\n");
  					break;
 
+ 				case 4:
+ 					for(int j=0; j<count; j++){
+
+ 						System.out.println("\nRight Triangle ID: " + rt1[j].rtID);
+ 						System.out.println("Right Triangle Height: " + rt1[j].getHeight());
+ 						System.out.println("Right Triangle Base: " + rt1[j].getBase());
+ 						System.out.println("Right Triangle Hypotenuse: " + rt1[j].getHypotenuse());
+ 						System.out.println("Right Triangle X coordinate: " + rt1[j].rtX);
+ 						System.out.println("Right Triangle Y coordinate: " + rt1[j].rtY + "\n");
+ 					}
+ 					break;
+
  			}//end of switch
 
 
