@@ -8,6 +8,7 @@ import java.util.Scanner;
  		int count = 0;
  		int rtID = 0;
  		int userChoice, rtIndex, rtX, rtY;
+ 		char exitChoice;
 
  		RightTriangle rt1[] = new RightTriangle[10];
 
@@ -125,6 +126,24 @@ import java.util.Scanner;
  					System.out.println("Enter a new Scaling Factor value: ");
  					RightTriangle.rtScale = scan.nextDouble();
  					System.out.println("\nNew Scale Factor Value: " + RightTriangle.rtScale + "\n");
+ 					break;
+
+ 				case 8:
+ 					for(int j=0; j<count; j++){
+ 						rt1[j].scaleTriangle();
+ 					}
+ 					break;
+
+ 				case 9:
+ 					System.out.println("Please confirm that you want to exit the program with (y/n): ");
+ 					exitChoice = scan.nextLine().charAt(0);
+ 					if(exitChoice == 'y' || exitChoice == 'Y'){
+ 						programRunner = false;
+ 					}else if(exitChoice == 'n' || exitChoice == 'N'){
+ 						programRunner = true;
+ 					}else{
+ 						System.out.println("\nInvalid choice entered\n");
+ 					}
  					break;
 
  			}//end of switch
