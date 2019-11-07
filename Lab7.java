@@ -103,6 +103,24 @@ import java.util.Scanner;
  					}
  					break;
 
+ 				case 6:
+ 					System.out.println("Enter the Right Triangle ID: ");
+ 					rtIndex = scan.nextInt();
+ 					for(int j=0; j<count; j++){
+ 						if(rt1[j].rtID == rtIndex){
+ 							System.out.println("Enter the New Height for the Right Triangle: ");
+ 							height = scan.nextInt();
+ 							System.out.println("Enter the New Base for the Right Triangle: ");
+ 							base = scan.nextInt();
+ 							rt1[j].setValues(base, height);
+ 							programDebug = false
+ 						}
+ 					}
+ 					if(programDebug){
+ 						System.out.println("\nInvalid Right Triangle ID\n");
+ 					}
+ 					break;
+
  			}//end of switch
 
 
