@@ -64,6 +64,13 @@ import java.util.Scanner;
  					}
  					break;
 
+ 				case 3: 
+ 					for(int j=0; j<count; j++){
+ 						rt1[j] = null;
+ 					}
+ 					count = 0;
+ 					System.out.println("All right triangles have been deleted.");
+ 					break;
 
  			}//end of switch
 
