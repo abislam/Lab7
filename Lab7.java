@@ -87,6 +87,7 @@ import java.util.Scanner;
  					break;
 
  				case 5:
+ 					System.out.println("Enter the Right Triangle ID: ");
  					rtIndex = scan.nextInt();
  					for(int j=0; j<count; j++){
  						if(rt1[j].rtID == rtIndex){
@@ -114,7 +115,7 @@ import java.util.Scanner;
  							System.out.println("Enter the New Base for the Right Triangle: ");
  							base = scan.nextInt();
  							rt1[j].setValues(base, height);
- 							programDebug = false
+ 							programDebug = false;
  						}
  					}
  					if(programDebug){
@@ -131,22 +132,25 @@ import java.util.Scanner;
  				case 8:
  					for(int j=0; j<count; j++){
  						rt1[j].scaleTriangle();
+ 						System.out.println("Scaled Right Triangle " + rt1[j] + "\n");
  					}
  					break;
 
  				case 9:
  					System.out.println("Please confirm that you want to exit the program with (y/n): ");
- 					exitChoice = scan.nextLine().charAt(0);
+ 					exitChoice = scan.next().charAt(0);
  					if(exitChoice == 'y' || exitChoice == 'Y'){
  						programRunner = false;
  					}else if(exitChoice == 'n' || exitChoice == 'N'){
  						programRunner = true;
  					}else{
- 						System.out.println("\nInvalid choice entered\n");
+ 						programRunner = true;
+ 						System.out.println("\nInvalid input\n");
  					}
- 					break;
+
 
  			}//end of switch
+ 			System.out.println("\n----------------------------------------------------------------------\n");
 
 
  		}
