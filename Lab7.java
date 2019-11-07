@@ -30,23 +30,42 @@ import java.util.Scanner;
 
  			switch(userChoice){
 
- 				case 1: if(count<10){
- 					System.out.println("Enter right triangle height: ");
- 					height = scan.nextDouble();
- 					System.out.println("Enter right triangle base: ");
- 					base = scan.nextDouble();
- 					System.out.println("Enter the X coordinate: ");
- 					rtX = scan.nextInt();
- 					System.out.println("Enter the Y coordinate: ");
- 					rtY = scan.nextInt();
+ 				case 1: 
+ 					if(count<10){
+	 					System.out.println("Enter right triangle height: ");
+	 					height = scan.nextDouble();
+	 					System.out.println("Enter right triangle base: ");
+	 					base = scan.nextDouble();
+	 					System.out.println("Enter the X coordinate: ");
+	 					rtX = scan.nextInt();
+	 					System.out.println("Enter the Y coordinate: ");
+	 					rtY = scan.nextInt();
 
- 					rt1[count++] = new RightTriangle(height, base, rtID, rtX, rtY);
- 					rtID +=1;
- 				}else{
- 					System.out.println("The program has reached the max number of right triangles allowed.")
- 				}
- 				break;
- 			}
+	 					rt1[count++] = new RightTriangle(height, base, rtID, rtX, rtY);
+	 					rtID +=1;
+	 				}else{
+	 					System.out.println("The program has reached the max number of right triangles allowed.")
+	 				}
+	 				break;
+
+	 			case 2:
+ 					System.out.println("Enter the Right Triangle ID: ");
+ 					rtIndex = scan.nextInt();
+ 					for(int j=0; j<count; j++){
+ 						if(rt1[j].rtID == rtIndex){
+ 							rt1[j] = rt1[count-1];
+ 							rt1[count-1] = null;
+ 							count--;
+ 							programDebug = false;
+ 						}
+ 					}
+ 					if(programDebug){
+ 						System.out.println("Invalid Right Triangle ID")	
+ 					}
+ 					break;
+
+
+ 			}//end of switch
 
 
  		}
