@@ -12,7 +12,7 @@ import java.util.Scanner;
  		RightTriangle rt1[] = new RightTriangle[10];
 
  		boolean programRunner = true;
- 		boolean programDebug;
+ 		boolean programDebug = true;
 
  		while(programRunner){
  			System.out.println("1 - Enter a new right triangle \n");
@@ -26,11 +26,29 @@ import java.util.Scanner;
  			System.out.println("9 - Exit program \n\n");
  			System.out.println("Please choose an option: ");
 
- 			
+ 			userChoice = scan.nextInt();
+
+ 			switch(userChoice){
+
+ 				case 1: if(count<10){
+ 					System.out.println("Enter right triangle height: ");
+ 					height = scan.nextDouble();
+ 					System.out.println("Enter right triangle base: ");
+ 					base = scan.nextDouble();
+ 					System.out.println("Enter the X coordinate: ");
+ 					rtX = scan.nextInt();
+ 					System.out.println("Enter the Y coordinate: ");
+ 					rtY = scan.nextInt();
+
+ 					rt1[count++] = new RightTriangle(height, base, rtID, rtX, rtY);
+ 					rtID +=1;
+ 				}else{
+ 					System.out.println("The program has reached the max number of right triangles allowed.")
+ 				}
+ 				break;
+ 			}
 
 
-
- 			
  		}
 
  	}
