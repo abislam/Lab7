@@ -121,6 +121,12 @@ import java.util.Scanner;
  					}
  					break;
 
+ 				case 7:
+ 					System.out.println("Enter a new Scaling Factor value: ");
+ 					RightTriangle.rtScale = scan.nextDouble();
+ 					System.out.println("\nNew Scale Factor Value: " + RightTriangle.rtScale + "\n");
+ 					break;
+
  			}//end of switch
 
 
