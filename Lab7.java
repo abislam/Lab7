@@ -61,7 +61,7 @@ import java.util.Scanner;
  						}
  					}
  					if(programDebug){
- 						System.out.println("\nInvalid Right Triangle ID\n")	;
+ 						System.out.println("\nInvalid Right Triangle ID\n");
  					}
  					break;
 
@@ -82,6 +82,24 @@ import java.util.Scanner;
  						System.out.println("Right Triangle Hypotenuse: " + rt1[j].getHypotenuse());
  						System.out.println("Right Triangle X coordinate: " + rt1[j].rtX);
  						System.out.println("Right Triangle Y coordinate: " + rt1[j].rtY + "\n");
+ 					}
+ 					break;
+
+ 				case 5:
+ 					rtIndex = scan.nextInt();
+ 					for(int j=0; j<count; j++){
+ 						if(rt1[j].rtID == rtIndex){
+ 							System.out.println("Enter the Right Triangle X coordinate: ");
+ 							rtX = scan.nextInt();
+ 							rt1[j].setX(rtX);
+ 							System.out.println("Enter the Right Triangle Y coordinate: ");
+ 							rtY = scan.nextInt();
+ 							rt1[j].setY(rtY);
+ 							programDebug = false;
+ 						}
+ 					}
+ 					if(programDebug){
+ 							System.out.println("\nInvalid Right Triangle ID\n");
  					}
  					break;
 
