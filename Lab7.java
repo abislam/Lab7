@@ -7,7 +7,7 @@ import java.util.Scanner;
  		double height, base;
  		int count = 0;
  		int rtID = 0;
- 		int userChoice, rtIndex, rtX, rtY;
+ 		int userChoice, rtIndex, xLoc, yLoc;
  		char exitChoice;
 
  		RightTriangle rt1[] = new RightTriangle[10];
@@ -16,7 +16,7 @@ import java.util.Scanner;
  		boolean programDebug = true;
 
  		while(programRunner){
- 			System.out.println("1 - Enter a new right triangle \n");
+ 			System.out.println("\n1 - Enter a new right triangle \n");
  			System.out.println("2 - Delete a right triangle \n");
  			System.out.println("3 - Delete all right triangles \n");
  			System.out.println("4 - Display all right triangle \n");
@@ -38,11 +38,11 @@ import java.util.Scanner;
 	 					System.out.println("Enter right triangle base: ");
 	 					base = scan.nextDouble();
 	 					System.out.println("Enter the X coordinate: ");
-	 					rtX = scan.nextInt();
+	 					xLoc = scan.nextInt();
 	 					System.out.println("Enter the Y coordinate: ");
-	 					rtY = scan.nextInt();
+	 					yLoc = scan.nextInt();
 
-	 					rt1[count++] = new RightTriangle(height, base, rtID, rtX, rtY);
+	 					rt1[count++] = new RightTriangle(height, base, rtID, xLoc, yLoc);
 	 					rtID +=1;
 	 				}else{
 	 					System.out.println("\nThe program has reached the max number of right triangles allowed.\n");
@@ -81,8 +81,8 @@ import java.util.Scanner;
  						System.out.println("Right Triangle Height: " + rt1[i].getHeight());
  						System.out.println("Right Triangle Base: " + rt1[i].getBase());
  						System.out.println("Right Triangle Hypotenuse: " + rt1[i].getHypotenuse());
- 						System.out.println("Right Triangle X coordinate: " + rt1[i].rtX);
- 						System.out.println("Right Triangle Y coordinate: " + rt1[i].rtY + "\n");
+ 						System.out.println("Right Triangle X coordinate: " + rt1[i].xLoc);
+ 						System.out.println("Right Triangle Y coordinate: " + rt1[i].yLoc + "\n");
  					}
  					break;
 
@@ -92,11 +92,11 @@ import java.util.Scanner;
  					for(int i=0; i<count; i++){
  						if(rt1[i].rtID == rtIndex){
  							System.out.println("Enter the Right Triangle X coordinate: ");
- 							rtX = scan.nextInt();
- 							rt1[i].setX(rtX);
+ 							xLoc = scan.nextInt();
+ 							rt1[i].setX(xLoc);
  							System.out.println("Enter the Right Triangle Y coordinate: ");
- 							rtY = scan.nextInt();
- 							rt1[i].setY(rtY);
+ 							yLoc = scan.nextInt();
+ 							rt1[i].setY(yLoc);
  							programDebug = false;
  						}
  					}
@@ -125,13 +125,13 @@ import java.util.Scanner;
 
  				case 7:
  					System.out.println("Enter a new Scaling Factor value: ");
- 					RightTriangle.rtScale = scan.nextDouble();
- 					System.out.println("\nNew Scale Factor Value: " + RightTriangle.rtScale + "\n");
+ 					RightTriangle.scaleFactor = scan.nextDouble();
+ 					System.out.println("\nNew Scale Factor Value: " + RightTriangle.scaleFactor + "\n");
  					break;
 
  				case 8:
  					for(int i=0; i<count; i++){
- 						rt1[i].scaleTriangle();
+ 						rt1[i].ScaleShape();
  						System.out.println("Scaled Right Triangle " + rt1[i].rtID + "\n");
  					}
  					break;
@@ -161,8 +161,8 @@ import java.util.Scanner;
 
  class RightTriangle{
  	private double base, height, hypotenuse, area, perimeter;
- 	int rtID, rtX, rtY;
- 	static double rtScale;
+ 	int rtID, xLoc, yLoc;
+ 	static double scaleFactor;
 
  	//getBase
  	public double getBase(){
@@ -201,28 +201,28 @@ import java.util.Scanner;
 
  	//setX
  	public void setX(int x){
- 		this.rtX = x;
+ 		this.xLoc = x;
  	}
 
  	//setY
  	public void setY(int y){
- 		this.rtY = y;
+ 		this.yLoc = y;
  	}
 
  	//setScale
- 	public void scaleTriangle(){
- 		this.height = this.height*rtScale;
- 		this.base = this.base*rtScale;
- 		this.hypotenuse = this.hypotenuse*rtScale;
+ 	public void ScaleShape(){
+ 		this.height = this.height*scaleFactor;
+ 		this.base = this.base*scaleFactor;
+ 		this.hypotenuse = this.hypotenuse*scaleFactor;
  	}
 
  	//constructor
- 	public RightTriangle(double base, double height, int rtID, int rtX, int rtY){
+ 	public RightTriangle(double base, double height, int rtID, int xLoc, int yLoc){
  		this.base = base;
  		this.height = height;
  		this.rtID = rtID;
- 		this.rtX = rtX;
- 		this.rtY = rtY;		
+ 		this.xLoc = xLoc;
+ 		this.yLoc = yLoc;		
  	}
 
 
