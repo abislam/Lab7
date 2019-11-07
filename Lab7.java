@@ -52,9 +52,9 @@ import java.util.Scanner;
 	 			case 2:
  					System.out.println("Enter the Right Triangle ID: ");
  					rtIndex = scan.nextInt();
- 					for(int j=0; j<count; j++){
- 						if(rt1[j].rtID == rtIndex){
- 							rt1[j] = rt1[count-1];
+ 					for(int i=0; i<count; i++){
+ 						if(rt1[i].rtID == rtIndex){
+ 							rt1[i] = rt1[count-1];
  							rt1[count-1] = null;
  							count--;
  							System.out.println("\nRight Triangle with ID " + rtIndex + " has been deleted\n");
@@ -67,36 +67,36 @@ import java.util.Scanner;
  					break;
 
  				case 3: 
- 					for(int j=0; j<count; j++){
- 						rt1[j] = null;
+ 					for(int i=0; i<count; i++){
+ 						rt1[i] = null;
  					}
  					count = 0;
  					System.out.println("\nAll right triangles have been deleted.\n");
  					break;
 
  				case 4:
- 					for(int j=0; j<count; j++){
+ 					for(int i=0; i<count; i++){
 
- 						System.out.println("\nRight Triangle ID: " + rt1[j].rtID);
- 						System.out.println("Right Triangle Height: " + rt1[j].getHeight());
- 						System.out.println("Right Triangle Base: " + rt1[j].getBase());
- 						System.out.println("Right Triangle Hypotenuse: " + rt1[j].getHypotenuse());
- 						System.out.println("Right Triangle X coordinate: " + rt1[j].rtX);
- 						System.out.println("Right Triangle Y coordinate: " + rt1[j].rtY + "\n");
+ 						System.out.println("\nRight Triangle ID: " + rt1[i].rtID);
+ 						System.out.println("Right Triangle Height: " + rt1[i].getHeight());
+ 						System.out.println("Right Triangle Base: " + rt1[i].getBase());
+ 						System.out.println("Right Triangle Hypotenuse: " + rt1[i].getHypotenuse());
+ 						System.out.println("Right Triangle X coordinate: " + rt1[i].rtX);
+ 						System.out.println("Right Triangle Y coordinate: " + rt1[i].rtY + "\n");
  					}
  					break;
 
  				case 5:
  					System.out.println("Enter the Right Triangle ID: ");
  					rtIndex = scan.nextInt();
- 					for(int j=0; j<count; j++){
- 						if(rt1[j].rtID == rtIndex){
+ 					for(int i=0; i<count; i++){
+ 						if(rt1[i].rtID == rtIndex){
  							System.out.println("Enter the Right Triangle X coordinate: ");
  							rtX = scan.nextInt();
- 							rt1[j].setX(rtX);
+ 							rt1[i].setX(rtX);
  							System.out.println("Enter the Right Triangle Y coordinate: ");
  							rtY = scan.nextInt();
- 							rt1[j].setY(rtY);
+ 							rt1[i].setY(rtY);
  							programDebug = false;
  						}
  					}
@@ -108,13 +108,13 @@ import java.util.Scanner;
  				case 6:
  					System.out.println("Enter the Right Triangle ID: ");
  					rtIndex = scan.nextInt();
- 					for(int j=0; j<count; j++){
- 						if(rt1[j].rtID == rtIndex){
+ 					for(int i=0; i<count; i++){
+ 						if(rt1[i].rtID == rtIndex){
  							System.out.println("Enter the New Height for the Right Triangle: ");
  							height = scan.nextInt();
  							System.out.println("Enter the New Base for the Right Triangle: ");
  							base = scan.nextInt();
- 							rt1[j].setValues(base, height);
+ 							rt1[i].setValues(base, height);
  							programDebug = false;
  						}
  					}
@@ -130,9 +130,9 @@ import java.util.Scanner;
  					break;
 
  				case 8:
- 					for(int j=0; j<count; j++){
- 						rt1[j].scaleTriangle();
- 						System.out.println("Scaled Right Triangle " + rt1[j] + "\n");
+ 					for(int i=0; i<count; i++){
+ 						rt1[i].scaleTriangle();
+ 						System.out.println("Scaled Right Triangle " + rt1[i].rtID + "\n");
  					}
  					break;
 
